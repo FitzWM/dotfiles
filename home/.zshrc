@@ -1,8 +1,7 @@
 # ZSH CONFIGURATION
 
 # Autoload 
-setopt nomatch correct hist_ignore_all_dups hist_ignore_space appendhistory \
-	extendedglob
+setopt nomatch correct hist_ignore_all_dups hist_ignore_space appendhistory extendedglob
 unsetopt autocd beep correctall
 FPATH=~/.zsh/zfunction:$FPATH
 PATH=~/.bin:$PATH
@@ -31,7 +30,7 @@ if [ -f ~/.zsh/zalias ] ; then
 fi
 
 if [ -f ~/.zsh/zlocal ] ; then
-	source ~/.zsh/zalias
+	source ~/.zsh/zlocal
 fi
 
 if [ -f ~/.zsh/zlogin ] ; then
