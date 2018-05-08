@@ -1,0 +1,12 @@
+# fff
+# This function takes in a given file and extracts all of its video, audio, and
+# subtitle tracks using FFmpeg. Then, it re-encodes the video tracks, using
+# settings designed to balance high quality and reasonable speed. This function
+# is optimized for live action and 3D animated content.
+
+fff ()
+{
+	pv "$1" | ffmpeg -fix_sub_duration -analyzeduration 20E6 -probesize 20E6 \
+		-i pipe:0 -v warning -map 0 -c copy -c:v libx264 -crf 18 -preset fast \
+		-tune film "$2.mkv" 
+}

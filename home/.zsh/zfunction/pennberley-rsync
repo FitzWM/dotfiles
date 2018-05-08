@@ -1,0 +1,8 @@
+# pennberley-rsync
+# FitzWM
+# This function downloads the specified file from Pennberley.
+
+pennberley-rsync ()
+{
+    rsync -ahPvz "fitz@pennberley.net:downloads/$@" .
+}

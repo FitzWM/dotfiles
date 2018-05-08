@@ -1,0 +1,251 @@
+/*
+ * blind-mode-wikia.css
+ * This script makes wikia.com more readable by removing the navbar, forcing 
+ * purple-on-white colors, and removing extraneous bits.
+ */
+
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document domain('wikia.com')
+{
+	/* Make content centered and full-width. */
+	#WikiaPage
+	{
+		width: 100% !important;
+		max-width: none !important;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	#WikiaMainContent
+	{
+		width: 100% !important;
+		margin: 0 !important;
+	}
+
+	#WikiaMainContentContainer
+	{
+		margin: 0 !important;
+		padding: 2em 2em 2em 2em  !important;
+	}
+
+	#WikiaPageHeader
+	{
+		padding-left: 0 !important;
+	}
+
+	/* Disable navbar. */
+	#buttons,
+	.contribute,
+	#globalNavigation,
+	.header-column.header-tally,
+	.nav,
+	.navbackground,
+	.wikia-button,
+	.wikia-menu-button,
+	.WikiHeader
+	{
+		display: none !important;
+	}
+
+	.header-container
+	{
+		margin-bottom: 0 !important;
+		padding-bottom: 0 !important;
+		border-bottom: none !important;
+	}
+
+	.header-column
+	{
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+	}
+
+	.WikiaSiteWrapper
+	{
+		padding-top: 0 !important;
+	}
+
+	.WikiaPageHeader
+	{
+		margin-bottom: 0 !important;
+		padding-bottom: 0 !important;
+	}
+
+	/* Purple text on white. Meant to be inverted. Adapted from:
+	 * https://userstyles.org/styles/105718/wiki-darkorchidtext
+	 */
+	body
+	{
+		background-color: white !important;
+		color: darkorchid !important;
+	}
+
+	#p-Interaction li
+	{
+		display: block !important;
+		list-style-image: none !important;
+		background-color: white;
+	}
+
+	#p-tb li,
+	#p-lang li,
+	#p-search,
+	#p-lang,
+	#p-lang .pBody,
+	#p-lang .pBody ul,
+	#searchform,
+	#searchBody,
+	div,
+	ul,
+	.mw-search-formheader,
+	div.smwfact td,
+	div.smwfact tr,
+	div.smwfact table,
+	div.thumb div
+	{
+		background-color: white !important;
+	}
+
+	#siteNotice
+	{
+		background-color: white !important;
+	}
+
+	#toc,
+	.toc,
+	div#footer
+	{
+		background-color: white;
+	}
+
+	.WikiaArticle .ForumActivityModule
+	{
+		border: 1px solid white !important;
+		background: white !important;
+		box-shadow: 0 2px 5px 0 white !important;
+	}
+
+	.article-categories
+	{
+		border: 1px solid white !important;
+		background-color: white !important;
+		background-image: none !important;
+	}
+
+	.suite_tab
+	{
+		background: darkorchid !important;
+	}
+
+	.warningtemplate
+	{
+		border: 2px solid white !important;
+		background-color: white !important;
+	}
+
+	a
+	{
+		color: #0079d3
+	}
+
+	pre
+	{
+		color: darkorchid
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	p,
+	h5,
+	tr,
+	th,
+	li,
+	span,
+	font,
+	.thumbcaption,
+	.mw-content-ltr dd,
+	.mw-content-rtl .mw-content-ltr dd
+	{
+		color: darkorchid !important;
+	}
+
+	div.catlinks,
+	.mainpage-box
+	{
+		background: white !important;
+	}
+
+	div.smwfact
+	{
+		border: 1px solid white !important;
+		background-color: white !important;
+	}
+
+	div.thumbinner,
+	#toc,
+	.toc,
+	.mw-warning,
+	table.wikitable > tr > th,
+	table.wikitable > tr > td,
+	table.wikitable > * > tr > th,
+	table.wikitable > * > tr > td,
+	table.wikitable,
+	html .thumbimage,
+	div#content,
+	.catlinks,
+	#p-cactions li
+	{
+		border: 1px solid darkorchid !important;
+	}
+
+	element.style
+	{
+		border: 0 solid darkorchid !important;
+	}
+
+	i,
+	cite,
+	em,
+	var,
+	address,
+	dfn
+	{
+		font-style: oblique !important;
+		color: darkorchid !important;
+	}
+
+	td,
+	tr,
+	.infobox
+	{
+		color: darkorchid !important;
+		border: 1px solid darkorchid !important;
+		background-color: white !important;
+	}
+
+	/* Final cleanup. Remove images, borders, etc. */
+	.page-width-container img,
+	.WikiaArticleInterlang,
+	#WikiaBar,
+	#WikiaFooter,
+	#WikiaNotifications,
+	#WikiaRail,
+	.wds-global-footer
+	{
+		display: none !important;
+	}
+
+	#WikiaHeader,
+	#WikiaPage
+	{
+		border: none !important;
+	}
+
+	body.mediawiki
+	{
+		background-image: none !important;
+	}
+}

@@ -1,0 +1,25 @@
+# m4afix
+# This function recurses through a given directory and tags every M4A file with
+# the filename as the title. It then removes the original files and replaces
+# them with the fixed ones. This function fixes M4As encoded via FFmpeg without
+# tags.
+
+m4afix ()
+{
+	# Create work folders.
+	mkdir new
+	
+	# Process all M4A files in directory. 
+	echo
+	for f in *.m4a ; 
+	do 
+		echo "Tagging $f..."
+		ffmpeg -nostats -loglevel 0 -i "$f" -metadata title="${f%.*}" -vn \
+			-c:a copy "new/$f"
+	done
+	echo
+
+	# Clean up.
+	mv new/*.m4a .
+	rmdir new
+}
