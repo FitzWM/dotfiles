@@ -1,6 +1,5 @@
 ; hotkeys.ahk
-; This script sets up several keyboard shorcuts to boost productivity. Note 
-; that it is designed for a Windows 10 (1607+) machine running WSL and MinTTY.
+; This script sets up several keyboard shorcuts to boost productivity.
 
 #MaxHotkeysPerInterval 1000
 #NoEnv
@@ -10,14 +9,9 @@ SendMode Input
 SetTitleMatchMode, 3                ; Forces complete matches for window titles.
 SetWorkingDir %A_ScriptDir%         ; Sets consistent working directory.
 
-Run, audio-switcher.ahk
-
 ; Rebind Caps Lock to Ctrl and Shift+RCtrl to Caps Lock.
 +RCtrl::Capslock
 Capslock::Ctrl
-
-; Rebind Rwin to the Application key. Fixes problem with KBP V80 keyboard.
-RWin::AppsKey
 
 ; Bind mousewheel to volume controls.
 !+WheelUp::Send {Volume_Up}
