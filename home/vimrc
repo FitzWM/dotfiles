@@ -46,9 +46,13 @@ set writebackup
 
 " Bindings
 let mapleader=","                   " Set leader (shortcut) key to comma
-nnoremap <leader>s :mksession<CR>   " Save session with ,
-nnoremap <leader>c ZZ               " Save and close more easily
-nnoremap <leader>xx ZQ              " Close without saving more easily
+
+" Save session with ,s
+nnoremap <leader>s :mksession<CR>
+
+" Close with saving (,c) or without saving (,xx)
+nnoremap <leader>c ZZ
+nnoremap <leader>xx ZQ
 
 " Edit and source various config files
 nnoremap <leader>ea :e ~/.zsh/zalias<CR>
@@ -60,14 +64,12 @@ nnoremap <leader>sv :source ~/.vimrc<CR>
 
 " Functions
 
-" Always open help and shells in  vertically split windows
+" Always open help and shells in vertically split windows
 cnoreabbrev <expr> help ((getcmdtype() is# ':' && getcmdline() is# 'help')?('vert help'):('help'))
 cnoreabbrev <expr> h ((getcmdtype() is# ':'&& getcmdline() is# 'h')?('vert help'):('h'))
 cnoreabbrev <expr> ter ((getcmdtype() is# ':' && getcmdline() is# 'ter')?('vert ter'):('ter'))
 
 " GUI
-"set guifont=DejaVu_Sans_Mono:h11:cANSI:qDRAFT
-"set guioptions=egmLt
 set mouse=a                         " Enable support for mouse and scrollwheel
 map <ScrollWheelUp> 3k
 map <ScrollWheelDown> 3j
