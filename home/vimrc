@@ -1,24 +1,47 @@
 " VIM CONFIGURATION 
 
-" Enable plugins.
-execute pathogen#infect()
+" Essential
+set nocompatible                    " Enter the third millenium
+syntax enable                       " Enable syntax highlighting
+filetype plugin indent on           " Enable filetype syntax and indentation
 
-" Appearance
-highlight Comment cterm=italic gui=italic
-set colorcolumn=80
-set number
-set showcmd
-set showmatch
-syntax enable
+" Editing
+set softtabstop=4                   " Convert new tabs to four spaces
+set shiftwidth=4
+set expandtab
+set backspace=indent,eol,start      " Make vim backspace behave as expected
 
-" Functionality
-filetype indent on
-set mouse=a
+" UI
+set number                          " Enable line numbers
+set showcmd                         " Show last command at bottom
+set showmatch                       " Show matching brackets, etc.
+set colorcolumn=80                  " Show 80-column line marker
+set cursorline                      " Underline current line
+set wildmenu                        " Show visual tab suggestions for commands
+set incsearch                       " Search as characters are entered
+set hidden                          " Allow buffers to be left without saving
+colorscheme slate
+set mouse=a                         " Enable support for mouse and scrollwheel
 map <ScrollWheelUp> 3k
 map <ScrollWheelDown> 3j
-set noexpandtab
-set shiftwidth=4
-set tabstop=4
+"highlight Comment cterm=italic gui=italic
+
+" Backups
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set writebackup
+
+" Shortcuts
+let mapleader=","                   " Set leader (shortcut) key to comma
+nnoremap <leader>s :mksession<CR>   " Save session with ,s
+
+" Edit and source vim and zsh configs
+nnoremap <leader>ea :e ~/.zsh/zalias<CR>
+nnoremap <leader>ev :e ~/.vimrc<CR>
+nnoremap <leader>ez :e ~/.zshrc<CR>
+nnoremap <leader>sv :source ~/.vimrc<CR>
 
 " gvim 
 set guifont=DejaVu_Sans_Mono:h11:cANSI:qDRAFT
