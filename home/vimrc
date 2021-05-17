@@ -10,6 +10,18 @@ set softtabstop=4                   " Convert new tabs to four spaces
 set shiftwidth=4
 set expandtab
 set backspace=indent,eol,start      " Make vim backspace behave as expected
+set autoindent                      " Enable automatic indentation
+set wrap linebreak                  " Enable soft wordwrap
+set formatoptions=tcrqwan1j         " Formatting options, as follows:
+                                    " t - Auto-wrap to 79
+                                    " c - Auto-wrap comments with leader
+                                    " r - Auto-insert comment leader with Enter
+                                    " q - Allow 'gq' to format comments
+                                    " w - Whitespace continues paragraphs
+                                    " a - Auto-format paragraphs / pasted
+                                    " n - Recognize numbered list
+                                    " 1 - Don't line on one-letter words
+                                    " j - Remove comment leaders when joining
 
 " UI
 set number                          " Enable line numbers
@@ -19,23 +31,24 @@ set colorcolumn=80                  " Show 80-column line marker
 set cursorline                      " Underline current line
 set wildmenu                        " Show visual tab suggestions for commands
 set incsearch                       " Search as characters are entered
+set ignorecase                      " Ignore case in searches
 set hidden                          " Allow buffers to be left without saving
+set splitright                      " Splits windows to the right by default
 colorscheme slate
-set mouse=a                         " Enable support for mouse and scrollwheel
-map <ScrollWheelUp> 3k
-map <ScrollWheelDown> 3j
-"highlight Comment cterm=italic gui=italic
+highlight Comment cterm=italic gui=italic
 
 " Backups
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
 set writebackup
 
-" Shortcuts
+" Bindings
 let mapleader=","                   " Set leader (shortcut) key to comma
-nnoremap <leader>s :mksession<CR>   " Save session with ,s
+nnoremap <leader>s :mksession<CR>   " Save session with ,
+nnoremap <leader>c ZZ               " Save and close more easily
+nnoremap <leader>xx ZQ              " Close without saving more easily
 
 " Edit and source various config files
 nnoremap <leader>ea :e ~/.zsh/zalias<CR>
@@ -45,6 +58,16 @@ nnoremap <leader>ev :e ~/.vimrc<CR>
 nnoremap <leader>ez :e ~/.zshrc<CR>
 nnoremap <leader>sv :source ~/.vimrc<CR>
 
-" gvim 
-set guifont=DejaVu_Sans_Mono:h11:cANSI:qDRAFT
-set guioptions=egmLt
+" Functions
+
+" Always open help and shells in  vertically split windows
+cnoreabbrev <expr> help ((getcmdtype() is# ':' && getcmdline() is# 'help')?('vert help'):('help'))
+cnoreabbrev <expr> h ((getcmdtype() is# ':'&& getcmdline() is# 'h')?('vert help'):('h'))
+cnoreabbrev <expr> ter ((getcmdtype() is# ':' && getcmdline() is# 'ter')?('vert ter'):('ter'))
+
+" GUI
+"set guifont=DejaVu_Sans_Mono:h11:cANSI:qDRAFT
+"set guioptions=egmLt
+set mouse=a                         " Enable support for mouse and scrollwheel
+map <ScrollWheelUp> 3k
+map <ScrollWheelDown> 3j
