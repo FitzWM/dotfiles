@@ -27,9 +27,9 @@ alias dlsync="tmux new-window -n dlsync '\rsync -ahPuv ~/server/ /mnt/y/ && \
 
 # Git
 alias gha="git add"
-alias ghc="git commit -a -m"
+alias ghc="git commit -a"
 alias ghi="gh issue create -R 'FitzWM/dotfiles' -t"
-alias ghl="gh issue list"
+alias ghl="gh issue list -R 'FitzWM/dotfiles'"
 alias ghp="git push"
 alias ghpl="git pull"
 alias ghs="git status"
