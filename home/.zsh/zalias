@@ -28,10 +28,10 @@ alias dlsync="tmux new-window -n dlsync '\rsync -ahPuv ~/server/ /mnt/y/ && \
 # Git
 alias gita="git add"
 alias gitc="git commit -a -m"
-alias gitcl="git clone"
-alias gitd="git diff HEAD"
+alias giti="gh issue create -b '' -R 'FitzWM/dotfiles' -t"
 alias gitpl="git pull"
 alias gitpu="git push"
+alias gits="git status"
 
 # Navigation
 alias ..="cd .."
