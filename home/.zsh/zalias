@@ -36,7 +36,6 @@ alias gitpu="git push"
 # Navigation
 alias ..="cd .."
 alias ...="cd ../.."
-alias ....="cd ../../.."
 alias bks="cd /mnt/d/books/audio/.audible"
 alias dl="cd ~/downloads"
 alias dot="cd ~/.dot"
