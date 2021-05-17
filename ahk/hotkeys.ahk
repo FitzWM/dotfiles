@@ -13,26 +13,23 @@ SetWorkingDir %A_ScriptDir%         ; Sets consistent working directory.
 +RCtrl::Capslock
 Capslock::Ctrl
 
+; Open or focus Windows Terminal.
+!`::
+Process, Exist, WindowsTerminal.exe
+if !ErrorLevel
+{
+    Run "C:\utilities\shortcuts\Terminal.lnk"
+}
+WinActivate, ahk_exe WindowsTerminal.exe
+Return
+
 ; Bind mousewheel to volume controls.
 !+WheelUp::Send {Volume_Up}
 !+WheelDown::Send {Volume_Down}
 !+MButton::Send {Volume_Mute}
 
-; Open, focus, and resize wsl-terminal.
-;!`::
-;Process, Exist, mintty.exe
-;if !ErrorLevel
-;{
-;	Run "C:\utilities\wsl-terminal\open-wsl.exe"
-;}
-;;Send ^+2
-;WinWaitActive, ahk_class mintty
-;WinMove, ahk_class mintty, , 0, 0, 1280, 720
-;WinSet, Style, -0xC00000, ahk_class mintty
-;Return
-
 ; Set active window to be always on top.
-;^+Space::Winset, AlwaysOnTop, , A
+^+Space::Winset, AlwaysOnTop, , A
 
 
 ; Reload script.
