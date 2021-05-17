@@ -26,12 +26,13 @@ alias dlsync="tmux new-window -n dlsync '\rsync -ahPuv ~/server/ /mnt/y/ && \
 	--exclude System\ Volume\ Information/'"
 
 # Git
-alias gita="git add"
-alias gitc="git commit -a -m"
-alias giti="gh issue create -b '' -R 'FitzWM/dotfiles' -t"
-alias gitpl="git pull"
-alias gitpu="git push"
-alias gits="git status"
+alias gha="git add"
+alias ghc="git commit -a -m"
+alias ghi="gh issue create -R 'FitzWM/dotfiles' -t"
+alias ghl="gh issue list"
+alias ghp="git push"
+alias ghpl="git pull"
+alias ghs="git status"
 
 # Navigation
 alias ..="cd .."
