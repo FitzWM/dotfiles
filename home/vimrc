@@ -37,8 +37,10 @@ set writebackup
 let mapleader=","                   " Set leader (shortcut) key to comma
 nnoremap <leader>s :mksession<CR>   " Save session with ,s
 
-" Edit and source vim and zsh configs
+" Edit and source various config files
 nnoremap <leader>ea :e ~/.zsh/zalias<CR>
+nnoremap <leader>eh :e ~/.dot/ahk/hotkeys.ahk<CR>
+nnoremap <leader>em :e ~/.dot/etc/mpv/mpv.conf<CR>
 nnoremap <leader>ev :e ~/.vimrc<CR>
 nnoremap <leader>ez :e ~/.zshrc<CR>
 nnoremap <leader>sv :source ~/.vimrc<CR>
