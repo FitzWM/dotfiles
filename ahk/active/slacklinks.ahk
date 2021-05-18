@@ -1,5 +1,5 @@
 ; slacklinks.ahk
-; J. Braden Chancellor
+; FitzWM
 ; 
 ; This script contains functions for creating formatted hyperlinks in Slack via 
 ; hotstrings.
@@ -59,7 +59,10 @@ slackLink(text, link)
 }
 
 ; Enables testing function.
-:X:*test::test()
+if WinActive, ahk_exe slack.exe
+{
+    :X:*test::test()
+}
 
 test()
 {
