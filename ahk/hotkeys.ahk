@@ -1,9 +1,9 @@
 ; hotkeys.ahk
 ; This script sets up several keyboard shorcuts to boost productivity.
 
+#SingleInstance Force
 #MaxHotkeysPerInterval 1000
 #NoEnv
-#SingleInstance, Force
 
 SendMode Input
 SetTitleMatchMode, 3                ; Forces complete matches for window titles.
@@ -21,6 +21,8 @@ if !ErrorLevel
     Run "C:\utilities\shortcuts\Terminal.lnk"
 }
 WinActivate, ahk_exe WindowsTerminal.exe
+WinWaitActive, ahk_exe WindowsTerminal.exe
+WinSet, Transparent, 220, A
 Return
 
 ; Bind mousewheel to volume controls.
@@ -30,7 +32,6 @@ Return
 
 ; Set active window to be always on top.
 ^+Space::Winset, AlwaysOnTop, , A
-
 
 ; Reload script.
 +^`::Reload
