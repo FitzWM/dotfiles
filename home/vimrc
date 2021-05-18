@@ -12,7 +12,7 @@ set expandtab
 set backspace=indent,eol,start      " Make vim backspace behave as expected
 set autoindent                      " Enable automatic indentation
 set wrap linebreak                  " Enable soft wordwrap
-set formatoptions=tcrqwan1j         " Formatting options, as follows:
+set formatoptions-=tcq              " Formatting options, as follows:
                                     " t - Auto-wrap to 79
                                     " c - Auto-wrap comments with leader
                                     " r - Auto-insert comment leader with Enter
