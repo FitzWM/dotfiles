@@ -1,4 +1,6 @@
 ; hotkeys.ahk
+; FitzWM
+;
 ; This script sets up several keyboard shorcuts to boost productivity.
 
 #SingleInstance Force
@@ -35,3 +37,8 @@ Return
 
 ; Reload script.
 +^`::Reload
+
+; Include scripts in active directory.
+#Include *i active\games.ahk
+#Include *i active\peekthrough.ahk
+#Include *i active\slack.ahk

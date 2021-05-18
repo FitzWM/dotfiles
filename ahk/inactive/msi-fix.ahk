@@ -1,5 +1,5 @@
 ; MSI Gaming APP Fix
-; /u/smile_e_face
+; FitzWM
 ;
 ; 2016-07-15 - 1.0 - Initial release.
 ; 2016-07-16 - 1.1 - Changed WinWait events in Click section to WinWaitActive.

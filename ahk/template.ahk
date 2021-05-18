@@ -1,7 +1,7 @@
-; 
-; J. Braden Chancellor
-; 
-; 
+; template.ahk
+; FitzWM
+;
+; Description
 
 #MaxHotkeysPerInterval 1000     ; Prevents infinite hotkey loops.
 #NoEnv                          ; Compatibility.
