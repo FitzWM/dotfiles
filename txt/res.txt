@@ -1,0 +1,15 @@
+### RES (REDDIT ENHANCEMENT SUITE) CONFIGURATION FILE
+
+## CSS snippets
+
+# Disable multireddit left sidebar
+.listing-chooser {display:none}
+.content[role=main] {margin-left: 5px!important}
+
+# Disable right sidebar
+.side { display: none; }
+
+## Multireddits
+
+# DepthHub - 
+AcademicBiblical+AcademicPhilosophy+Anthropology+Ask_Politics+AskAnthropology+AskBibleScholars+AskHistorians+askphilosophy+askscience+AskSocialScience+badhistory+cogsci+CredibleDefense+DaystromInstitute+DepthHub+Foodforthought+geopolitics+LetsTalkMusic+linguistics+MensLib+musictheory+neutralnews+NeutralPolitics+philosophy+PhilosophyofScience+PoliticalDiscussion+Scholar+TheoryOfReddit+TrueAskReddit+TrueFilm+truegaming+TrueReddit+WarCollege
