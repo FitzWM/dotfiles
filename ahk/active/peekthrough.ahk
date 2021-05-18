@@ -1,9 +1,14 @@
-#SingleInstance Force
-#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+; peekthrough.ahk
+; This script enables adjustable transparency for windows.
 
-TLevel = 180
+#MaxHotkeysPerInterval 1000
+#SingleInstance Force
+#NoEnv
+
+SendMode Input
+SetWorkingDir %A_ScriptDir%  ; Sets consistent starting directory.
+
+TLevel = 190
 
 #^Esc::
 	WinGet, CurrentTLevel, Transparent, A
