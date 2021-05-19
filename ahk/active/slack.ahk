@@ -3,21 +3,21 @@
 ; 
 ; This script includes many hotkeys for work on the Desk.
 
-#MaxHotkeysPerInterval 1000     ; Prevents infinite hotkey loops.
+#MaxHotkeysPerInterval 10000    ; Prevents infinite hotkey loops.
 #NoEnv                          ; Compatibility.
 #SingleInstance, Force          ; Disables annoying script restart message.
+#KeyHistory 0                   ; Disable key history for performance.
 
 SendMode Input                  ; Faster, more reliable than Send.
 SetTitleMatchMode, 3            ; Forces exact matches for window titles.
 SetWorkingDir %A_ScriptDir%     ; Sets consistent working directory.
+SetBatchLines -1                ; Prevent per-line 10ms sleep
+ListLines Off                   ; Disable line history for performance.
+Process, Priority, , A          ; Set AboveNormal process priority.
 
 #IfWinActive ahk_exe slack.exe
 
-; slackLink Functions
-:X:*test::testSL()
-:X:*msteams::msTeams()
-
-; Text Expansions
+; Standard Hotstrings
 ::*2fa::I reset the user's 2FA methods. Please have them log in to https://ibm.biz/w3id-2fa-settings with w3id credentials to set up the methods again.
 
 ::*any::Is there anything else I can help you with today?
@@ -48,6 +48,10 @@ SetWorkingDir %A_ScriptDir%     ; Sets consistent working directory.
 ::*qac::Quick Assist should ask you for a code. Your code is 
 
 ::*qao::Could you go to your Start menu and type in "quick assist" for me, please?
+
+; slackLink Hotstrings
+:X:*test::testSL()
+:X:*msteams::msTeams()
 
 msTeams()
 {
