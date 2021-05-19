@@ -22,7 +22,11 @@ Process, Priority, , A          ; Set AboveNormal process priority.
 
 ::*any::Is there anything else I can help you with today?
 
+::*ap::Approved.
+
 ::*bc::Braden Chancellor
+
+::*col::Does the user have any colleagues with a working connection? That's usually the quickest way to find working Notes links.
 
 ::*dc::Thank you for contacting the Windows 10 Help Desk. I am disconnecting this chat due to lack of response. If you still need assistance, please contact us at 1 (888) 426-4357.
 
@@ -41,6 +45,8 @@ Process, Priority, , A          ; Set AboveNormal process priority.
 ::*mind::Do you mind if I remote into your computer?
 
 ::*no2fa::I'm not seeing anything to reset for this user. Could you have them go to https://ibm.biz/w3id-2fa-settings and try to set up their 2FA there?
+
+::*pers::If it's a personal device (non-IBM), we can have the Beekeeper team remove it from the user's account. Please get the following and escalate the ticket to CIO_InfoSec, along with the Beekeeper PDT:+{ENTER}- w3id+{ENTER}Device name+{ENTER}Device serial
 
 ::*teams::We do not support MS Teams, as our licenses for Office 365 do not include it. See here: https://w3.ibm.com/help/#/article/microsoft_teams
 +{ENTER}+{ENTER}The user will need to be invited as a guest by the client. Instructions are linked from the above article.
