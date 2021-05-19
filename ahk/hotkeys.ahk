@@ -3,13 +3,17 @@
 ;
 ; This script sets up several keyboard shorcuts to boost productivity.
 
-#SingleInstance Force
-#MaxHotkeysPerInterval 1000
-#NoEnv
+#MaxHotkeysPerInterval 10000    ; Prevents infinite hotkey loops.
+#NoEnv                          ; Compatibility.
+#SingleInstance, Force          ; Disables annoying script restart message.
+#KeyHistory 0                   ; Disable key history for performance.
 
-SendMode Input
-SetTitleMatchMode, 3                ; Forces complete matches for window titles.
-SetWorkingDir %A_ScriptDir%         ; Sets consistent working directory.
+SendMode Input                  ; Faster, more reliable than Send.
+SetTitleMatchMode, 3            ; Forces exact matches for window titles.
+SetWorkingDir %A_ScriptDir%     ; Sets consistent working directory.
+SetBatchLines -1                ; Prevent per-line 10ms sleep
+ListLines Off                   ; Disable line history for performance.
+Process, Priority, , A          ; Set AboveNormal process priority.
 
 ; Rebind Caps Lock to Ctrl and Shift+RCtrl to Caps Lock.
 +RCtrl::Capslock
