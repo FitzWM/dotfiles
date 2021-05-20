@@ -5,6 +5,7 @@ cd
 # Set up Zsh
 ln -s ~/.dot/home/zshrc .zshrc
 ln -s ~/.dot/home/.zsh .zsh
+mkdir -P ~/.cache/zsh
 
 # Set up Vim and backup directory.
 ln -s ~/.dot/home/vimrc .vimrc
