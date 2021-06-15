@@ -1,5 +1,5 @@
 #Include VA.ahk
-#Persistent				; This keeps the script running permanently.
+#Persistent		; This keeps the script running permanently.
 #SingleInstance	force	; Only allows one instance of the script to run.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -12,17 +12,17 @@
 
 	if InStr(deviceName, "ZxR")
 	{
-		Run C:\utilities\nircmd\nircmd setdefaultsounddevice "CABLE Input" 1
-		Run C:\utilities\nircmd\nircmd setdefaultsounddevice "CABLE Input" 2
-		audioSwitchBox("CABLE Input")
+		Run C:\utilities\nircmd\nircmd setdefaultsounddevice "Klipsch" 1
+		Run C:\utilities\nircmd\nircmd setdefaultsounddevice "Klipsch" 2
+		audioSwitchBox("Klipsch")
 	}
-	else if InStr(deviceName, "CABLE Input")
+	else if InStr(deviceName, "Klipsch")
 	{
-		Run C:\utilities\nircmd\nircmd setdefaultsounddevice "Modi" 1
-		Run C:\utilities\nircmd\nircmd setdefaultsounddevice "Modi" 2
-		audioSwitchBox("Modi")
+		Run C:\utilities\nircmd\nircmd setdefaultsounddevice "Buds" 1
+		Run C:\utilities\nircmd\nircmd setdefaultsounddevice "Buds" 2
+		audioSwitchBox("Buds")
 	}
-	else if InStr(deviceName, "Modi")
+	else if InStr(deviceName, "Buds")
 	{	
 		Run C:\utilities\nircmd\nircmd setdefaultsounddevice "55S421" 1
 		Run C:\utilities\nircmd\nircmd setdefaultsounddevice "55S421" 2
@@ -43,7 +43,8 @@ Return
 #b::
 	test := VA_GetDevice("playback")
 	testName := VA_GetDeviceName(test)
-	audioSwitchBox(testName)
+        test2 := VA_GetDevice(Buds)
+	audioSwitchBox(test2)
 Return
 
 ; Display sound toggle GUI
