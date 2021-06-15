@@ -26,9 +26,23 @@ Process, Priority, , A          ; Set AboveNormal process priority.
 
 ::*bc::Braden Chancellor
 
+:r0:*c42::
+( Join
+To transfer data from their old account to their new one:+{ENTER}
+1. Uninstall Code42 completely, including AppData and ProgramData folders. Reboot.+{ENTER}
+Reinstall Code42 from this link: https://ibm.box.com/s/przw3swmen4reo3r7tkyxb71dulvft4p and use "central.crashplan.com" as the server when asked.+{ENTER}
+Log in under the old account.+{ENTER}
+Download everything.+{ENTER}
+Open the Code42 console using Ctrl-Shift-C, and then enter command "deauthorize".+{ENTER}
+Log in under the new account.+{ENTER}
+Set up their new backup.
+)
+
 ::*col::Does the user have any colleagues with a working connection? That's usually the quickest way to find working Notes links.
 
 ::*dc::Thank you for contacting the Windows 10 Help Desk. I am disconnecting this chat due to lack of response. If you still need assistance, please contact us at 1 (888) 426-4357.
+
+::*dism::Basically, DISM repairs your Windows component store (C:\Windows\WinSxS) by comparing it with Microsoft's servers, and SFC repairs your actual system files by comparing them with your component store. +{ENTER} +{ENTER} So, if you run SFC before DISM, you run the risk of replacing working files with corrupt ones from a corrupt component store. And if you run DISM without SFC, you only repair the component store, not the actual system files.
 
 ::*end::Thank you for contacting the Windows 10 Help Desk. Have a wonderful rest of your day{!}
 
@@ -56,8 +70,25 @@ Process, Priority, , A          ; Set AboveNormal process priority.
 ::*qao::Could you go to your Start menu and type in "quick assist" for me, please?
 
 ; slackLink Hotstrings
+:X:*gd::escGlobalDomino()
+:X:*isc::escISC()
 :X:*test::testSL()
 :X:*msteams::msTeams()
+
+escGlobalDomino()
+{
+    Send Go ahead and escalate to the Global Domino team using the PDT in the
+    slackLink("Global Domino IH","https://ibm.service-now.com/kb_view.do?sys_kb_id=666da8e91ba434d0fe491131b24bcb57&sysparm_rank=1&sysparm_tsqueryId=3828b5c91b78fc10693fdac4bd4bcbfc")
+    Send {Backspace}.{Space}
+    Send Just let me know before sending, and I'll tag it.
+}
+
+escISC()
+{
+    Send All support for ISC is provided through direct ticketing via the 
+    slackLink("IBM Sales Cloud (ISC)","https://w3.ibm.com/help/#/article/ibm_sales_cloud/overview")
+    Send article on Help@IBM. Please have the user go there and create a ticket with their issue.
+}
 
 msTeams()
 {
