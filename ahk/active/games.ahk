@@ -17,7 +17,7 @@ b::Send i
 g::Send j
 v::Send m
 
-; Dragon Age Inquisition
+; Dragon Age 3: Inquisition
 #IfWinActive, ahk_exe DragonAgeInquisition.exe
 
 ~RButton::GoSub, Stop
@@ -34,5 +34,3 @@ Stop:
 {
     Send, {W Up}
 } Return
-
-#IfWinActive
