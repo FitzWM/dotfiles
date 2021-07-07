@@ -21,6 +21,7 @@ SAVEHIST=10000
 export EDITOR=vim
 export LANG=en_US.UTF-8
 export SHELL=zsh
+export XDG_CONFIG_HOME=$HOME
 tabs -4
 umask 022
 

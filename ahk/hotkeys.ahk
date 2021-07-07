@@ -19,6 +19,9 @@ Process, Priority, , A          ; Set AboveNormal process priority.
 +RCtrl::Capslock
 Capslock::Ctrl
 
+; Rebind Scroll Lock to Ctrl+Shift+\. Makes it bindable.
+ScrollLock::^+\
+
 ; Open or focus Windows Terminal.
 !`::
 Process, Exist, WindowsTerminal.exe
