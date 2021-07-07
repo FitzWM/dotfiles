@@ -1,0 +1,5 @@
+# gitignore configuration file
+
+home/.zsh/zhistory
+home/.zsh/zlocal
+home/.zsh/zlogin

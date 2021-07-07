@@ -4,26 +4,22 @@
 alias cp="\rsync -ahP"
 alias df="df -h"
 alias du="du -h"
-alias la="ls -AFhLo --group-directories-first"
-alias ls="ls -FhLo --group-directories-first"
+alias la="ls -AFhlL --group-directories-first"
+alias ls="ls -FhlL --group-directories-first"
 alias mkdir="mkdir -p"
 alias rm="rm -rf"
 alias rsync="rsync -ahPvz"
-alias sudo="sudo -S"
 
 # Editing
 alias e="$EDITOR"
 alias ea="$EDITOR ~/.zsh/zalias"
 alias ev="$EDITOR ~/.vimrc"
 alias ez="$EDITOR ~/.zshrc"
-alias se="sudo -e"
+alias se="sudoedit"
 
 # Files
 alias ct="ls -1 | tail -n +2 | wc -l"
 alias mi="mediainfo"
-alias dlsync="tmux new-window -n dlsync '\rsync -ahPuv ~/server/ /mnt/y/ && \
-	\rsync -ahPuv /mnt/y/ ~/server/ --exclude *RECYCLE.BIN*/ \
-	--exclude System\ Volume\ Information/'"
 
 # Git
 alias gha="git add"
@@ -54,18 +50,15 @@ alias pro="ssh 192.168.1.4"
 alias ytdl="youtube-dl --merge-output-format=mkv --output '%(uploader)s - %(title)s [%(id)s].%(ext)s'"
 alias ytdlu="sudo youtube-dl -U"
 
-# Package managers
+# Apt
 alias acs="apt-cache show"
+alias afs="apt-file search"
+alias afu="apt-file update"
 alias agar="sudo apt-get autoremove"
 alias agi="sudo apt-get install"
 alias agr="sudo apt-get remove"
-alias agu="sudo apt-get update && sudo apt-get upgrade"
-alias paci="sudo pacmatic -Syu && sudo pacmatic -S"
-alias pacq="sudo pacman -Q"
-alias pacr="sudo pacmatic -R"
-alias pacrns="sudo pacmatic -Rns"
-alias pacs="sudo pacman -Ss"
-alias pacu="sudo pacmatic -Syu && cd ~/build && cower -vdu"
+alias agu="sudo apt-get update"
+alias aguu="sudo apt-get update && sudo apt-get upgrade"
 
 # systemd
 alias sdis="sudo systemctl disable"
