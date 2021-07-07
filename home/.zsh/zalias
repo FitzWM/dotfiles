@@ -24,10 +24,11 @@ alias mi="mediainfo"
 # Git
 alias gha="git add"
 alias ghc="git commit -a"
+alias ghd="git diff"
 alias ghi="gh issue create -R 'FitzWM/dotfiles' -t"
 alias ghl="gh issue list -R 'FitzWM/dotfiles'"
 alias ghp="git push"
-alias ghpl="git pull"
+alias ghu="git pull"
 alias ghs="git status"
 
 # Navigation
@@ -41,16 +42,15 @@ alias st="cd ~/sync"
 alias yt="cd ~/.yt"
 
 # Network 
-alias fuji="ssh fitz@45.79.202.24"
 alias nchk="ping -c 4 google.com"
-alias penn="ssh fitz@pennberley.net"
+alias penn="ssh pennberley"
 alias penndl="tmux new -s penndl -d 'rsync -ahPrv --files-from=:/home/fitz/downloads/files.txt fitz@pennberley.net:~/downloads ~/server' && tmux attach -t penndl"
 alias pennr="pennberley-rsync"
-alias pro="ssh 192.168.1.4"
+alias spire="ssh spire"
 alias ytdl="youtube-dl --merge-output-format=mkv --output '%(uploader)s - %(title)s [%(id)s].%(ext)s'"
 alias ytdlu="sudo youtube-dl -U"
 
-# Apt
+# apt
 alias acs="apt-cache show"
 alias afs="apt-file search"
 alias afu="apt-file update"
