@@ -21,16 +21,6 @@ alias se="sudoedit"
 alias ct="ls -1 | tail -n +2 | wc -l"
 alias mi="mediainfo"
 
-# Git
-alias gha="git add"
-alias ghc="git commit -a"
-alias ghd="git diff"
-alias ghi="gh issue create -R 'FitzWM/dotfiles' -t"
-alias ghl="gh issue list -R 'FitzWM/dotfiles'"
-alias ghp="git push"
-alias ghu="git pull"
-alias ghs="git status"
-
 # Navigation
 alias ..="cd .."
 alias ...="cd ../.."
@@ -41,12 +31,14 @@ alias srv="cd ~/server"
 alias st="cd ~/sync"
 alias yt="cd ~/.yt"
 
-# Network 
+# Network # netcat
+alias ncd="nc -q 1 -l -p 1234 | pv | tar xfvp"
+alias ncs="tar cf - . | nc -q 1 10.0.0.2 1234"
 alias nchk="ping -c 4 google.com"
 alias penn="ssh pennberley"
 alias penndl="tmux new -s penndl -d 'rsync -ahPrv --files-from=:/home/fitz/downloads/files.txt fitz@pennberley.net:~/downloads ~/server' && tmux attach -t penndl"
 alias pennr="pennberley-rsync"
-alias spire="ssh spire"
+alias ssp="ssh spire"
 alias ytdl="youtube-dl --merge-output-format=mkv --output '%(uploader)s - %(title)s [%(id)s].%(ext)s'"
 alias ytdlu="sudo youtube-dl -U"
 
@@ -59,6 +51,16 @@ alias agi="sudo apt-get install"
 alias agr="sudo apt-get remove"
 alias agu="sudo apt-get update"
 alias aguu="sudo apt-get update && sudo apt-get upgrade"
+
+# git
+alias gha="git add"
+alias ghc="git commit -a"
+alias ghd="git diff"
+alias ghi="gh issue create -R 'FitzWM/dotfiles' -t"
+alias ghl="gh issue list -R 'FitzWM/dotfiles'"
+alias ghp="git push"
+alias ghu="git pull"
+alias ghs="git status"
 
 # systemd
 alias sdis="sudo systemctl disable"
