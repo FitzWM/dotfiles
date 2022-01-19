@@ -17,6 +17,9 @@ Process, Priority, , A          ; Set AboveNormal process priority.
 
 #IfWinActive ahk_exe slack.exe
 
+; Split-view integration
+MButton::Send ^{Click left}
+
 ; Standard Hotstrings
 ::*2fa::I reset the user's 2FA methods. Please have them log in to https://ibm.biz/w3id-2fa-settings with w3id credentials to set up the methods again.
 
@@ -25,6 +28,8 @@ Process, Priority, , A          ; Set AboveNormal process priority.
 ::*ap::Approved.
 
 ::*bc::Braden Chancellor
+
+::*bl::Bitlocker key sent to manager.
 
 :r0:*c42::
 ( Join
@@ -60,6 +65,8 @@ Set up their new backup.
 
 ::*no2fa::I'm not seeing anything to reset for this user. Could you have them go to https://ibm.biz/w3id-2fa-settings and try to set up their 2FA there?
 
+::*ob::This user is still in onboarding. They won't be able to set up until that's done and GMX_AAD has automatically migrated their info from BluePages to Endpoint.
+
 ::*pers::If it's a personal device (non-IBM), we can have the Beekeeper team remove it from the user's account. Please get the following and escalate the ticket to CIO_InfoSec, along with the Beekeeper PDT:+{ENTER}- w3id+{ENTER}Device name+{ENTER}Device serial
 
 ::*teams::We do not support MS Teams, as our licenses for Office 365 do not include it. See here: https://w3.ibm.com/help/#/article/microsoft_teams
@@ -68,6 +75,8 @@ Set up their new backup.
 ::*qac::Quick Assist should ask you for a code. Your code is 
 
 ::*qao::Could you go to your Start menu and type in "quick assist" for me, please?
+
+:r0:*ta::Looks good! Tagged.
 
 ; slackLink Hotstrings
 :X:*gd::escGlobalDomino()

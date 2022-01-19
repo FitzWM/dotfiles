@@ -7,8 +7,8 @@ inaudible ()
 	echo
 
 	# Retrieve activation bytes.
-	ABYTES1=$(sed '4q;d' ~/sync/notes/audible.txt | cut -c 6-)
-	ABYTES2=$(sed '5q;d' ~/sync/notes/audible.txt | cut -c 6-)
+	ABYTES1=$(sed '4q;d' ~/personal/notes/audible.txt | cut -c 6-)
+	ABYTES2=$(sed '5q;d' ~/personal/notes/audible.txt | cut -c 6-)
 
 	# Move into work folder.
 	mkdir work && cd work

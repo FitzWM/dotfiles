@@ -9,15 +9,15 @@
 #KeyHistory 0                   ; Disable key history for performance.
 
 SendMode Input                  ; Faster, more reliable than Send.
-SetTitleMatchMode, 3            ; Forces exact matches for window titles.
+SetTitleMatchMode, 2            ; Fuzzy window title matching.
 SetWorkingDir %A_ScriptDir%     ; Sets consistent working directory.
 SetBatchLines -1                ; Prevent per-line 10ms sleep
 ListLines Off                   ; Disable line history for performance.
 Process, Priority, , A          ; Set AboveNormal process priority.
 
 ; Rebind Caps Lock to Ctrl and Shift+RCtrl to Caps Lock.
-+RCtrl::Capslock
-Capslock::Ctrl
+;+RCtrl::Capslock
+;Capslock::Ctrl
 
 ; Rebind Scroll Lock to Ctrl+Shift+\. Makes it bindable.
 ScrollLock::^+\
