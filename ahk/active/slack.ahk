@@ -20,6 +20,10 @@ Process, Priority, , A          ; Set AboveNormal process priority.
 ; Split-view integration
 MButton::Send ^{Click left}
 
+; QoL
+PgUp::Send {LButton}{Home}
+PgDn::Send {LButton}{End}
+
 ; Standard Hotstrings
 ::*2fa::I reset the user's 2FA methods. Please have them log in to https://ibm.biz/w3id-2fa-settings with w3id credentials to set up the methods again.
 
@@ -84,6 +88,8 @@ Set up their new backup.
 :X:*test::testSL()
 :X:*msteams::msTeams()
 
+;^+f::fixPings()
+
 escGlobalDomino()
 {
     Send Go ahead and escalate to the Global Domino team using the PDT in the
@@ -104,6 +110,24 @@ msTeams()
     Send We do not support MS Teams, as our licenses for Office 365 do not include it. See
     slackLink("Microsoft Teams","https://w3.ibm.com/help/#/article/microsoft_teams")
     Send on Help@IBM.
+}
+
+fixPings()
+{
+   Send ^,              ; Open Preferences menu and wait.
+   Sleep 500
+   Click 2280 465
+   Sleep 500
+   Send {WheelDown 14}
+   Sleep 500
+   Click, 1600 620
+   Sleep 500
+   Click, 1600 785
+   Sleep 500
+   Click, 1600 620
+   Sleep 500
+   Click, 1600 720
+   Sleep 500
 }
 
 ; This is the slackLink function itself.

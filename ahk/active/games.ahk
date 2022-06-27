@@ -33,3 +33,12 @@ Stop:
 {
     Send, {W Up}
 } Return
+
+; Elder Scrolls Online
+;IfWinActive, ahk_class EsoClientWndClass
+;LShift::
+;    if GetKeyState("LShift") ; LShift is logically down. Release it.
+;        Send {Blind}{LShift Up}
+;    else ; LShift is logically up. Press it.
+;        Send {Blind}{LShift Down}
+;return

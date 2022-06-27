@@ -23,16 +23,27 @@ Process, Priority, , A          ; Set AboveNormal process priority.
 ScrollLock::^+\
 
 ; Open or focus Windows Terminal.
-!`::
-Process, Exist, WindowsTerminal.exe
-if !ErrorLevel
-{
-    Run "C:\utilities\shortcuts\Terminal.lnk"
-}
-WinActivate, ahk_exe WindowsTerminal.exe
-WinWaitActive, ahk_exe WindowsTerminal.exe
-WinSet, Transparent, 220, A
-Return
+;!`::
+; Open Windows Terminal if it isn't running.
+;Process, Exist, WindowsTerminal.exe
+;if !ErrorLevel
+;{
+;    Run "C:\utilities\shortcuts\Terminal.lnk"
+;}
+
+; If Windows Terminal is the active window, minimize it. Else, focus it.
+;ifWinActive, ahk_exe WindowsTerminal.exe
+;{
+;    WinMinimize
+;}
+;else
+;{
+;    WinShow, ahk_exe WindowsTerminal.exe
+;    WinActivate, ahk_exe WindowsTerminal.exe
+;    WinWaitActive, ahk_exe WindowsTerminal.exe
+;}
+;WinSet, Transparent, 220, A
+;Return
 
 ; Bind mousewheel to volume controls.
 !+WheelUp::Send {Volume_Up}

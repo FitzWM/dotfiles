@@ -2,8 +2,8 @@
 # This function strips the AAX DRM from Audible audiobook files, splits the
 # resultant MP4 file by chapter, and converts the chapter files to MP3.
 
-inaudible ()
-{
+#inaudible ()
+#{
 	echo
 
 	# Retrieve activation bytes.
@@ -24,34 +24,40 @@ inaudible ()
 	}
 	fi
 
-	# Split stripped M4A file by chapters.
-	echo "Splitting by chapter..."
-	mkvmerge -o "${1%.*} (.m4a" --split chapters:all "${1%.*}.m4a" 1> /dev/null
+        # Tag file with title, author, etc.
+	echo "Tagging $f..."
+        mkdir tagged
+	ffmpeg -nostats -loglevel 1 -i "${1%.*}.m4a" -metadata title="${1%.*}" -vn \
+	    -c:a copy "tagged/$f"
 
-	# Rename M4A files.
-	echo "Renaming M4A files..."
-	rm "${1%.*}.m4a"
-	rename "s/-0//" *.m4a
-	LAST_M4A=$(ls -1 *.m4a | tail -n 1 | cut -d "(" -f2 | cut -d "." -f1)
-	rename "s/\.m4a/\ of\ $LAST_M4A\)\.m4a/" *.m4a
-
-	# Tag M4A files with filename as title. Fixes bug with Windows programs.
-	echo
-	for f in *.m4a ;
-	do
-		echo "Tagging $f..."
-		ffmpeg -nostats -loglevel 0 -i "$f" -metadata title="${f%.*}" -vn \
-			-c:a copy "new/$f"
-	done
-	echo
-
-	# Move out of work folder.
-	mv *.m4a .. && cd ..
-
-	# Delete work folder and prompt to delete AAX file.
-	echo "Cleaning up..."
-	rm -rf work
-	#rm "$1"
+#	# Split stripped M4A file by chapters.
+#	echo "Splitting by chapter..."
+#	mkvmerge -o "${1%.*} (.m4a" --split chapters:all "tagged/${1%.*}.m4a" 1> /dev/null
+#
+#	# Rename M4A files.
+#	echo "Renaming M4A files..."
+#	rm "${1%.*}.m4a"
+#	rename "s/-0//" *.m4a
+#	LAST_M4A=$(ls -1 *.m4a | tail -n 1 | cut -d "(" -f2 | cut -d "." -f1)
+#	rename "s/\.m4a/\ of\ $LAST_M4A\)\.m4a/" *.m4a
+#
+##	# Tag M4A files with filename as title. Fixes bug with Windows programs.
+##	echo
+##	for f in *.m4a ;
+##	do
+##		echo "Tagging $f..."
+##		ffmpeg -nostats -loglevel 0 -i "$f" -metadata title="${f%.*}" -vn \
+##			-c:a copy "new/$f"
+##	done
+##	echo
+##
+#	# Move out of work folder.
+#	mv *.m4a .. && cd ..
+#
+#	# Delete work folder and prompt to delete AAX file.
+#	echo "Cleaning up..."
+#	rm -rf work
+#	#rm "$1"
 	
 	echo
-}
+#}
