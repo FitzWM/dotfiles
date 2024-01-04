@@ -16,6 +16,7 @@ alias ea="$EDITOR ~/.zsh/zalias"
 alias ev="$EDITOR ~/.vimrc"
 alias ez="$EDITOR ~/.zshrc"
 alias se="sudoedit"
+alias emacs="emacsclient -n -c -a emacs"
 
 # Files
 alias ct="ls -1 | tail -n +2 | wc -l"
@@ -69,10 +70,13 @@ alias sdis="sudo systemctl disable"
 alias sen="sudo systemctl enable"
 alias sj="sudo journalctl -xe"
 alias sstart="sudo systemctl start"
+alias sstartu="systemctl --user start"
 alias sstat="sudo systemctl status"
+alias sstatu="systemctl --user status"
 alias sstop="sudo systemctl stop"
 alias srel="sudo systemctl daemon-reload"
 alias sres="sudo systemctl restart"
+alias sresu="systemctl --user restart"
 
 # tmux
 alias tma="tmux attach -t"
@@ -81,3 +85,4 @@ alias tmx="tmux new -s"
 
 # Misc.
 alias sz="source ~/.zshrc"
+alias bc="BC_ENV_ARGS=<(echo "scale=2") \bc"

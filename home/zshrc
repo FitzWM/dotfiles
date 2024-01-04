@@ -1,14 +1,13 @@
-# ZSH CONFIGURATION
 
 # Autoload 
 setopt nomatch correct hist_ignore_all_dups hist_ignore_space appendhistory extendedglob
 unsetopt autocd beep correctall
 FPATH=~/.zsh/zfunction:$FPATH
-PATH=~/.bin:$PATH
+PATH=~/.config/emacs/bin:~/.bin:$PATH
 autoload -Uz compinit && compinit -u
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook    # Recent dirs list
 autoload -Uz ffmpeg-2d ffmpeg-2d-720p ffmpeg-film ffmpeg-film-720p \
-	inaudible m4afix pennberley-rsync server-sync
+	inaudible m4afix pennberley-rsync server-sync uz
 add-zsh-hook chpwd chpwd_recent_dirs
 zstyle ':chpwd:*' recent-dirs-file "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/chpwd-recent-dirs"
 zstyle :compinstall filename '~/.zshrc'
@@ -18,10 +17,10 @@ PS1="[%m] %2~ %# "
 HISTFILE=~/.zsh/zhistory
 HISTSIZE=10000
 SAVEHIST=10000
-export EDITOR=vim
+export EDITOR=emacsclient
 export LANG=en_US.UTF-8
 export SHELL=zsh
-export XDG_CONFIG_HOME=$HOME
+export XDG_CONFIG_HOME=$HOME/.config
 tabs -4
 umask 022
 
